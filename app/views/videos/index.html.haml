@@ -1,7 +1,8 @@
 %article.video_category
   - @categories.each do |category|
     %header
-      %h3= category.name.upcase
+      = link_to category_path(category) do
+        %h3= category.name.upcase
       .videos.row
         - category.videos.each do |video|
           .video.col-sm-2

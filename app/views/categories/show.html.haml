@@ -1,0 +1,13 @@
+%article.video_category
+  %header
+    %h3=  "#{'Here is our ' + @category.name.upcase}"
+    %hr
+    .videos.row
+      - @category.videos.each do |video|
+        .video.col-sm-2
+          = link_to video do
+            = image_tag("#{video.url_small_cover}")
+            %p
+              = link_to video.title, video
+  %p
+    = link_to "Back" , home_path

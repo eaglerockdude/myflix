@@ -1,8 +1,8 @@
 Myflix::Application.routes.draw do
 
-  get 'category/show'
-
   root 'videos#index'
+
+  resources :categories, only: :show
 
   get 'home', to: 'videos#index'
 
@@ -11,4 +11,6 @@ Myflix::Application.routes.draw do
   # get "/home" => "videos#index"
 
   get 'ui(/:action)', controller: 'ui'
+
+
 end
