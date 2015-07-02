@@ -15,12 +15,22 @@ Video.create(title: "First Men in the Moon", description: "Based on the HG Wells
 Video.create(title: "Journey to the Center of the Earth", description: "An Edinburgh professor and assorted colleagues follow an explorer's trail down an extinct Icelandic volcano to the earth's center.", url_small_cover:"url small cover", url_large_cover:"url big cover")
 Video.create(title: "Kingpin", description: "A star bowler whose career was prematurely cut off hopes to ride a new prodigy to success and riches.", url_small_cover:"url small cover", url_large_cover:"url big cover")
 Video.create(title: "The Blue Max", description: "A young pilot in the German air force of 1918, disliked as lower-class and unchivalrous, tries ambitiously to earn the medal offered for 20 kills.", url_small_cover:"url small cover", url_large_cover:"url big cover")
-
+create
 # t.string   "title"
 # t.text     "description"
 # t.string   "url_small_cover"
 # t.string   "url_large_cover"
 # t.datetime "created_at"
 # t.datetime "updated_at"
+
+
+
+
+
+
+
+
+
+
 
 

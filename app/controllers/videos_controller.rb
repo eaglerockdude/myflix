@@ -3,7 +3,8 @@ class VideosController < ApplicationController
   before_action :get_video, only:[:show]
 
   def index
-    @videos = Video.all
+    # @videos = Video.all
+    @categories = Category.all
   end
 
   def show

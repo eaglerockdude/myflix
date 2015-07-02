@@ -7,5 +7,13 @@
       <schema-pattern>myflix_development.pg_catalog myflix_development.public</schema-pattern>
       <default-schemas>myflix_development.pg_catalog myflix_development.public</default-schemas>
     </data-source>
+    <data-source name="Rails myflix: development" uuid="9c349aaa-1859-4393-8d38-b0605c7ad4c8">
+      <user-name>myflix</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+    </data-source>
+    <data-source name="Rails myflix: test" uuid="c4a4c958-690e-4b47-a1fb-26bb783f98dd">
+      <user-name>myflix</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+    </data-source>
   </component>
 </project>
