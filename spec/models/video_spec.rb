@@ -8,4 +8,14 @@ describe Video do
     # grab our first video created and see if the same as we just created.
     expect(Video.first).to eq(video)
   end
+
+  it "belongs to a category" do
+
+    scifi = Category.new(name: "sci-fi")
+
+    startrek = Video.create(title:"Star Trek", description:"Adventures of the Starship Enterprise", category: scifi)
+
+    expect(startrek.category).to eq(scifi)
+  end
+
 end
