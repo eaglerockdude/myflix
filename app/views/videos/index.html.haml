@@ -3,7 +3,7 @@
     %header
       = link_to category_path(category) do
         %h3= category.name.upcase
-      .videos.row
+      .video.row
         - category.videos.each do |video|
           .video.col-sm-2
             = link_to video do

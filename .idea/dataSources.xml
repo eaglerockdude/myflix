@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1035886027">
+  <component name="DataSourceManagerImpl" format="xml" hash="1595809952">
     <data-source source="LOCAL" name="PostgreSQL - myflix_development@localhost" uuid="25fc5043-db27-4e9b-83a2-951ea7d665b3">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/myflix_development</jdbc-url>
-      <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails myflix: development" uuid="9c349aaa-1859-4393-8d38-b0605c7ad4c8">
       <driver-ref>postgresql</driver-ref>
