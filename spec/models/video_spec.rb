@@ -18,4 +18,13 @@ describe Video do
     expect(startrek.category).to eq(scifi)
   end
 
+  it "does not save a video without a title"  do
+   video = Video.create(description: "test video description")
+   expect(Video.count).to eq(0) # as validation prevents any save.
+  end
+
+  it "does not save a video without a description"  do
+    video = Video.create(title: "test video title")
+    expect(Video.count).to eq(0) # as validation prevents any save.
+  end
 end
