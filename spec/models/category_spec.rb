@@ -8,7 +8,7 @@ describe Category do
     expect(Category.first).to eq(category)
   end
 
-  it "can have many videos" do
+  it "a category can have many videos" do
 
     variety = Category.new(name:"variety shows")
 

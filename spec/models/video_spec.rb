@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Video do
-  it "video can save itself" do
+  it "a video can save itself" do
     video = Video.new(title:"Kingpin", description:"Best hairdoos in bowling", url_small_cover:"smallcover.jpg",
                       url_large_cover:"largecover.jpg")
     video.save
@@ -9,7 +9,7 @@ describe Video do
     expect(Video.first).to eq(video)
   end
 
-  it "belongs to a category" do
+  it "a video belongs to a category" do
 
     scifi = Category.new(name: "sci-fi")
 
