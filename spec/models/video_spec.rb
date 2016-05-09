@@ -28,7 +28,7 @@ describe Video do
     it "returns an array of all matches ordered by create date" do
     longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
     longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
-    expect(Video.search_by_title("long")).to eq([longest_day,longfellow])
+    expect(Video.search_by_title("Long")).to eq([longfellow,longest_day])
     end
 
   end
