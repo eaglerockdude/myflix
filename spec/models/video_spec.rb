@@ -13,7 +13,7 @@ describe Video do
       expect(Video.search_by_title("Long Time Companion")).to eq([])
     end
 
-    it "returns an array with one element if for an exact match" do
+    it "returns an array with one element for an exact match" do
       longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples")
       little_big = Video.create(title: "Little Big Man", description: "Little Big Man gets a bath by his step-mom")
       expect(Video.search_by_title("The Longest Day")).to eq([longest_day])
@@ -29,6 +29,12 @@ describe Video do
     longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
     longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
     expect(Video.search_by_title("Long")).to eq([longfellow,longest_day])
+    end
+
+    it "returns an empty array if the search argument is blank" do
+    longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
+    longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
+    expect(Video.search_by_title(" ")).to eq([])
     end
 
   end
