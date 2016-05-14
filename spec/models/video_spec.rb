@@ -26,18 +26,18 @@ describe Video do
     end
 
     it "returns an array of all matches ordered by create date" do
-    longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
-    longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
-    expect(Video.search_by_title("Long")).to eq([longfellow,longest_day])
+      longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
+      longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
+      expect(Video.search_by_title("Long")).to eq([longfellow,longest_day])
     end
 
     it "returns an empty array if the search argument is blank" do
-    longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
-    longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
-    expect(Video.search_by_title(" ")).to eq([])
+      longest_day = Video.create(title: "The Longest Day", description: "Finding active record search examples", created_at:2.day.ago)
+      longfellow  = Video.create(title: "Longfellow", description: "A cop with a cowboy hat", created_at:1.day.ago)
+      expect(Video.search_by_title(" ")).to eq([])
     end
 
   end
-  end
+end
 
 
