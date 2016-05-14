@@ -6,7 +6,7 @@ Myflix::Application.routes.draw do
 
   resources :videos, only: :show  do
     collection do
-      post "search" => "videos#search"
+      get "search" => "videos#search"
     end
   end
   get 'ui(/:action)', controller: 'ui'
