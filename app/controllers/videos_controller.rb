@@ -11,6 +11,11 @@ class VideosController < ApplicationController
 
   end
 
+  def search
+    @results = Video.search_by_title(params[:search_term])
+  end
+
+
   private
   def get_video
     @video = Video.find(params[:id])
