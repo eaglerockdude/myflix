@@ -4,4 +4,9 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def recent_videos
+    # up to first 6
+
+  end
+
 end
