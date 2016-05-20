@@ -44,7 +44,7 @@ describe Category do
 
     end
 
-    it 'returns nothing(empty arry) if no videos found do' do
+    it 'returns nothing(empty array) if no videos found do' do
       variety = Category.new(name:"variety shows")
       expect(variety.recent_videos).to eq([])
     end
