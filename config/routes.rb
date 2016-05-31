@@ -1,6 +1,6 @@
 Myflix::Application.routes.draw do
 
-  root 'videos#index'
+  root 'pages#front'
 
   get 'categories/:id' => 'categories#show' , as:"category"
 
@@ -11,6 +11,8 @@ Myflix::Application.routes.draw do
   end
   get 'ui(/:action)', controller: 'ui'
 
+  get 'register', to: 'users#new'
+  resources :users, only: 'create'
 
 end
 
