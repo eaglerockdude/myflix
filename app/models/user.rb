@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email, :full_name
   validates_uniqueness_of :email
-  #validates :password, presence: { on: :create }
+  validates :password, presence: { on: :create }
 
 end
