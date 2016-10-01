@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :logged_in? , :access_denied
+  helper_method :current_user, :logged_in? , :access_denied , :require_login
+
+
 
   # if user logged in return user object else nil  "memoization ||= "
   def current_user
@@ -12,9 +14,9 @@ class ApplicationController < ActionController::Base
     !!current_user  # !! turns into a boolean ..to preclude nil case
   end
 
-  def require_user
+  def require_login
     if !logged_in?
-      flash[:error] = "Must be logged in to do that."
+      flash[:error] = "Access for members only.  Please sign-in."
       redirect_to root_path
     end
   end
@@ -27,6 +29,5 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Access denied."
     redirect_to root_path
   end
-
 
 end

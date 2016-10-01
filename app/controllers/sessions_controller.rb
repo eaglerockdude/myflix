@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  skip_before_action :require_login, only: [:new, :create]
+
   def new
     redirect_to home_path if logged_in?
   end
@@ -7,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome  #{user.username},  you've logged in."
+      flash[:success] = "Welcome  #{user.full_name},  you've logged in."
       redirect_to home_path
     else
       flash[:error] = "There is something wrong with your username or password.  Please try again."
