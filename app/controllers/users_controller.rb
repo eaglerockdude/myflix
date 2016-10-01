@@ -7,8 +7,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thank you for signing up!"
+      # auto login for possible future use
+      #session[:user_id] = @user.id
+      redirect_to login_path, notice: "Thank you for signing up..you may login now!"
+    # TODO change redirect to Login when login is done
     else
       render "new"
     end

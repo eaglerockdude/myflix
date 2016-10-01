@@ -1,6 +1,9 @@
 Myflix::Application.routes.draw do
 
+
   root 'pages#front'
+
+  get 'home', to: "videos#index"
 
   get 'categories/:id' => 'categories#show' , as:"category"
 
@@ -10,12 +13,19 @@ Myflix::Application.routes.draw do
     end
   end
 
-  get 'ui(/:action)', controller: 'ui'
 
-  get 'register', to: 'users#new'
 
   resources :users, only: 'create'
 
+  # routes for login/logout via session
+  get  "register" => "users#new"
+  get  "login"   => "sessions#new"
+  post "login"   => "sessions#create"
+  get  "logout"  => "sessions#destroy"
+
+
+
+  get 'ui(/:action)', controller: 'ui'
 end
 
 
