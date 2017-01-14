@@ -9,9 +9,13 @@ describe UsersController do
       expect(assigns(:user)).to be_an_instance_of(User)
     end
   end
-
+  # POST action
   describe 'POST #create' do
-
+    it 'sets the instance variable @user' do
+      post :create, user: Fabricate.attributes_for(:user)
+      expect(assigns(:user)).to be_an_instance_of(User)
+    end
+# POST VALID
     context 'with valid input' do
       it 'creates a user' do
         Fabricate(:user)
@@ -19,13 +23,11 @@ describe UsersController do
       end
 
       it 'redirects to the sign-in page'  do
-        # post :create, user:{email:'ken@gmail',password:'password',
-        #                     full_name:'kenneth d mcfadden'}
         post :create, user: Fabricate.attributes_for(:user)
         expect(response).to redirect_to login_path
       end
     end
-
+# POST INVALID
     context 'with invalid input' do
       it 'does not create a user' do
         post :create, user:{email:' ',password:'password',full_name:'kenneth d mcfadden'}
@@ -35,9 +37,8 @@ describe UsersController do
         post :create, user:{email:' ',password:'password',full_name:'kenneth d mcfadden'}
         expect(response).to render_template :new
       end
-
     end
 
-  end
+  end   #post create
 
-end
+end #main
