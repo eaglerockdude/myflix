@@ -20,6 +20,7 @@ class VideosController < ApplicationController
   private
   def get_video
     @video = Video.find(params[:id])
+    @reviews = @video.reviews
   end
 
 end
