@@ -32,9 +32,8 @@
             = f.text_area(:content, rows: 6, class: 'col-sm-7')
         %fieldset.form-group.actions.clearfix
           %br
-          %input(type="submit" value="Submit" class="btn")
+            = f.submit "Submit", class: "btn"
             = link_to "Cancel", @video
-          -#%a(href="") Cancel
       %header
         %h3 User Reviews #{@reviews.count}
       %ul
