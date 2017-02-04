@@ -3,11 +3,11 @@
     .row
       .col-sm-7.col-sm-offset-1
         = image_tag("#{@video.url_large_cover}")
-      .col-sm-3
+      .video_info.col-sm-3
         %header
-          %h3.big_red
+          %h3
             = @video.title
-          %span Average Rating: 4.5/5.0
+          %span.avg_rating Average Rating: 4.5/5.0
 
           %p
             = @video.description
